@@ -1,0 +1,25 @@
+.notify {
+  width: 36.4rem;
+  height: 8rem;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2.4rem 2.4rem 1.6rem 2.6rem;
+  --background: var(--background-color);
+  background: var(--background);
+  &.success {
+    --background: var(--background-color);
+  }
+  &.failed {
+    --background: var(--second-color);
+  }
+  // text style
+  .message {
+    color: var(--background-color);
+    font-size: 1.6rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+}

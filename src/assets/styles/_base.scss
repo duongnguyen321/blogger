@@ -1,0 +1,90 @@
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  scroll-padding-top: 7rem;
+  &::-webkit-scrollbar {
+    width: 0.5rem;
+  }
+}
+body {
+  *,
+  *::before,
+  *::after {
+    transition-timing-function: ease-in-out;
+    transition-duration: 0.25s;
+    transition-property: var(--transition-property);
+    font-family: 'Lexend Deca';
+  }
+  .container {
+    position: relative;
+    max-width: 100vw;
+    padding: 0 calc((100% - var(--max-width)) / 2);
+    margin: 0 auto;
+  }
+}
+html,
+body,
+div {
+  scroll-behavior: smooth;
+  &::-webkit-scrollbar-thumb {
+    background: var(--content-color);
+    border-radius: 99px;
+  }
+  &::-webkit-scrollbar-track {
+    background: var(--background-color);
+  }
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+span,
+li,
+button,
+input,
+textarea,
+select,
+option,
+optgroup {
+  &::selection {
+    background: var(--content-color);
+    color: var(--main-color);
+  }
+}
+button,
+input,
+select,
+textarea {
+  outline: none;
+  border: none;
+  background: inherit;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'DM Serif Display';
+  font-weight: 600;
+}
+p,
+span {
+  font-family: 'Lexend Deca';
+  font-weight: 400;
+}
+button {
+  cursor: pointer;
+}
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 0.75rem;
+  object-fit: contain;
+}
