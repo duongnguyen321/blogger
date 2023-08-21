@@ -1,6 +1,10 @@
 import React from 'react';
-import notifyStyles from 'notifyStyles.module.scss';
-import notifyIcon from '@A/images/notify.svg';
+import notifyIcon from 'assets/images/notify.svg';
+import notifyStyles from './notifyStyles.module.scss';
+
+/**
+ * Define the Notify component
+ */
 export default function Notify({ className, message, type = 'success' }) {
   const {
     notify: notifyTagStyle,

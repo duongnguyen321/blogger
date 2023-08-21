@@ -1,7 +1,10 @@
 import React from 'react';
-import Link from '@H/Link';
-import tagStyles from 'tagStyles.module.scss';
+import { Link } from 'helper';
+import tagStyles from './tagStyles.module.scss';
 
+/**
+ * Define the Tag component
+ */
 export default function Tag({ to = '#', text, className }) {
   const { tag: tagTagStyle } = tagStyles;
 

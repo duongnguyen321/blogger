@@ -1,14 +1,19 @@
 import React from 'react';
-import Header from './Header';
-import Main from './Main';
-import Footer from './Footer';
+import Header from 'layout/Header';
+import Main from 'layout/Main';
+import Footer from 'layout/Footer';
+import StateProvider, { Consumer } from 'services/context';
 
-export default function Layout() {
+export default function Layout({ children }) {
   return (
     <>
-      <Header></Header>
-      <Main></Main>
-      <Footer></Footer>
+      <Header>header</Header>
+      <StateProvider>
+        <Consumer>
+          {(store)=> <Main store={store}>{children}</Main>}
+        </Consumer>
+      </StateProvider>
+      <Footer>footer</Footer>
     </>
   );
 }

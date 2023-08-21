@@ -8,6 +8,8 @@ html {
   }
 }
 body {
+  background-color: var(--background-color);
+  font-size: var(--font-16);
   *,
   *::before,
   *::after {
@@ -72,11 +74,15 @@ h5,
 h6 {
   font-family: 'DM Serif Display';
   font-weight: 600;
+  font-size: var(--font-22);
 }
+a,
 p,
 span {
   font-family: 'Lexend Deca';
   font-weight: 400;
+  color: var(--content-color);
+  font-size: var(--font-18);
 }
 button {
   cursor: pointer;

@@ -1,13 +1,9 @@
 {
   "compilerOptions": {
-    "baseUrl": "./",
-    "paths": {
-      "@/*": ["src/*"],
-      "@C/*": ["src/components/*"],
-      "@A/*": ["src/assets/*"],
-      "@R/*": ["src/routes/*"],
-      "@L/*": ["src/layout/*"],
-      "@H/*": ["src/helpers/*"]
-    }
-  }
+    "baseUrl": "src",
+    "target": "es6",
+    "module": "commonjs"
+  },
+  "exclude": ["node_modules"],
+  "include": ["src"]
 }
