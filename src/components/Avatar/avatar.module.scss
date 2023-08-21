@@ -1,20 +1,24 @@
 .wrap {
   display: flex;
   align-items: flex-end;
+  width: fit-content;
   .avatar {
-    width: 6.6rem;
-    height: 6.6rem;
+    display: inline-block;
+    $size: 6.6rem;
+    width: $size;
+    height: $size;
     flex-shrink: 0;
     background-color: var(--main-color);
     text-align: center;
-    line-height: 6.6rem;
+    border-radius: $size;
+    outline: 1px solid var(--background-color);
     &::after {
       content: attr(data-name);
       color: var(--background-color);
-      font-size: 3.2rem;
+      font-size: calc($size / 2);
       font-style: normal;
       font-weight: 400;
-      line-height: normal;
+      line-height: $size;
     }
   }
   .name {

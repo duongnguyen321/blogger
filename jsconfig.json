@@ -2,8 +2,10 @@
   "compilerOptions": {
     "baseUrl": "src",
     "target": "es6",
-    "module": "commonjs"
+    "module": "commonjs",
+    "paths": {
+      "services/*": ["./src/services/*"]
+    }
   },
-  "exclude": ["node_modules"],
   "include": ["src"]
 }

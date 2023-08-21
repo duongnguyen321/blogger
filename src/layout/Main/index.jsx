@@ -11,7 +11,9 @@ export default function Main({ className = '', children, store }) {
   const { main: mainTagStyle } = mainStyles;
   return (
     <main className={`${mainTagStyle} ${className}`}>
+      <div className="container">
       {cloneElement(children, { ...store })}
+      </div>
     </main>
   );
 }

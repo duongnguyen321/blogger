@@ -1,5 +1,6 @@
 .tag {
   display: flex;
+  width: fit-content;
   padding: 0.8rem 2rem;
   justify-content: center;
   align-items: center;
@@ -14,5 +15,9 @@
   line-height: normal;
   &:active {
     --main-color: rgba(110, 235, 131, 0.8);
+  }
+  &::before{
+    content: "#";
+    font-style: italic;
   }
 }

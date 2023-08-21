@@ -7,15 +7,19 @@
   align-items: center;
   gap: 1rem;
   border-radius: 0.5rem;
-  --box-shadow: none;
+  transition-property: box-shadow, border-color, background-color, color;
+  --box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.25) inset;
+  transition: ease-in-out 0.15s;
   box-shadow: var(--box-shadow);
-  --border: none;
-  border: var(--border);
+  --border: var(--main-color);
+  &.secondary {
+    --border: var(--second-color);
+  }
+  border: 2px solid var(--border);
   --background: var(--main-color);
-  background: var(--background);
+  background-color: var(--background);
   --color: var(--background-color);
   color: var(--color);
-
   // text style
 
   font-size: 2rem;
@@ -35,20 +39,20 @@
     --box-shadow: -4px -4px 4px 0px rgba(0, 0, 0, 0.25) inset;
     --color: var(--content-color);
     &.primary {
-      --border: 2px solid var(--main-color);
+      --border: var(--main-color);
       --background: rgba(110, 235, 131, 0.9);
     }
     &.secondary {
-      --border: 2px solid #ff5e5b;
+      --border: var(--second-color);
       --background: rgba(255, 94, 91, 0.9);
     }
   }
   &:active {
-    --border: 2px solid rgba(255, 255, 255, 0.65);
+    --border: rgba(255, 255, 255, 0.65);
     --box-shadow: 4px 4px 2px 0px rgba(0, 0, 0, 0.25) inset;
     &.primary {
       --background: rgba(110, 235, 131, 0.7);
-      --color: var(--content-color);
+      --color: #00000080;
     }
     &.secondary {
       --background: rgba(255, 94, 91, 0.7);
@@ -56,7 +60,7 @@
     }
   }
   &:disabled {
-    --border: 2px solid rgba(255, 255, 255, 0.5);
+    --border: rgba(255, 255, 255, 0.5);
     --background: var(--second-content-color);
     --box-shadow: 8px 8px 8px 0px rgba(0, 0, 0, 0.25) inset;
     &.secondary {

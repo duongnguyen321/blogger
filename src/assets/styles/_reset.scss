@@ -50,6 +50,9 @@ textarea {
   padding: 0;
   outline: none;
   border: none;
-  box-sizing: border-box;
   text-decoration: none;
+}
+
+*, *:before, *:after{
+  box-sizing: border-box;
 }

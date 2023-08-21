@@ -1,6 +1,6 @@
 import React from 'react';
-import { Link } from 'helper';
-import avatarStyles from './avatarStyles.module.scss';
+import { Links } from 'services/helpers';
+import avatarStyles from './avatar.module.scss';
 
 /**
  * Define the Avatar component
@@ -17,10 +17,10 @@ export default function Avatar({ name }) {
    */
   if (!name || typeof name !== 'string')
     return (
-      <Link to={'#'} className={wrapTagStyle}>
+      <Links to={'#'} className={wrapTagStyle}>
         <span className={avatarTagStyle}>A</span>{' '}
         <span className={nameTagStyle}>Avatar</span>
-      </Link>
+      </Links>
     );
   /**
    * Clean the name string by removing multiple spaces and trimming the beginning and end
@@ -35,9 +35,13 @@ export default function Avatar({ name }) {
    */
   const avatarPosition = name.lastIndexOf(' ') + 1;
   return (
-    <Link to={'#'} className={wrapTagStyle}>
-      <img className={avatarTagStyle} data-name={name.charAt(avatarPosition)} />{' '}
+    <Links to={'#'} className={wrapTagStyle}>
+      <span
+        className={avatarTagStyle}
+        data-name={name.charAt(avatarPosition)}
+        alt={name}
+      />{' '}
       <span className={nameTagStyle}>{firstChar + name.slice(1)}</span>
-    </Link>
+    </Links>
   );
 }

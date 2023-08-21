@@ -1,16 +1,20 @@
 import React from 'react';
-import { Link } from 'helper';
+import { Links } from 'services/helpers';
 import tagStyles from './tagStyles.module.scss';
 
 /**
  * Define the Tag component
+ * @param {object} props - The component props
+ * @param {string} [props.to='#'] - The link destination. Can be a string for a relative path or an object with a `pathname` and `search` property for an absolute path. Defaults to '#'.
+ * @param {string} [props.text] - The tag text.
+ * @param {string} [props.className] - The tag class name. Can be used to apply custom styles.
  */
-export default function Tag({ to = '#', text, className }) {
+export default function Tag({ to = '#', text, className = '' }) {
   const { tag: tagTagStyle } = tagStyles;
 
   return (
-    <Link to={to} className={`${tagTagStyle} ${className}`}>
+    <Links to={to} className={`${tagTagStyle} ${className}`}>
       {text}
-    </Link>
+    </Links>
   );
 }
