@@ -13,6 +13,12 @@ export default function Home() {
       <h1>Home</h1>
       <Button title="Home" />
       <Notify message="Hello World!" type="success" />
+      <Notify
+        message="Hello World!"
+        type="failed"
+        timeout="4"
+        position="bottom-right"
+      />
       <Links to="/about">About</Links>
       <Tag to="/about" text="about" />
     </Section>

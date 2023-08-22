@@ -1,10 +1,27 @@
 .notify {
   transition: opacity, transform;
-  position: absolute;
-  top: 40px;
-  right: 20px;
-  opacity: 0;
-  transform: translate(calc(100% + 20px));
+  position: fixed;
+  --transform: translate(calc(100% + 20px));
+  &.top-left {
+    top: 40px;
+    right: 20px;
+    --transform: translate(calc(100% + 20px));
+  }
+  &.top-right {
+    top: 40px;
+    left: 20px;
+    --transform: translate(calc(-100% - 20px));
+  }
+  &.bottom-left {
+    bottom: 40px;
+    right: 20px;
+    --transform: translate(calc(100% + 20px));
+  }
+  &.bottom-right {
+    bottom: 40px;
+    left: 20px;
+    --transform: translate(calc(-100% - 20px));
+  }
   width: 36.4rem;
   height: 8rem;
   display: flex;
@@ -24,19 +41,23 @@
   .message {
     color: var(--background-color);
   }
+  opacity: 0;
+
+  transform: var(--transform);
   @keyframes animateShow {
     0% {
       opacity: 0;
     }
-    5%,
-    94% {
+    10%,
+    85% {
       transform: translate(0);
       opacity: 1;
     }
     to {
-      transform: translate(calc(100% + 20px));
+      transform: var(--transform);
       opacity: 0.5;
     }
   }
   animation: animateShow 1;
+  animation-timing-function: var(--timing-function);
 }

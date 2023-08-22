@@ -18,7 +18,7 @@ body {
   *,
   *::before,
   *::after {
-    transition-timing-function: ease-in-out;
+    transition-timing-function: var(--timing-function);
     transition-duration: 0.25s;
     transition-property: var(--transition-property, $transition-property);
     font-family: 'Lexend Deca', sans-serif;
