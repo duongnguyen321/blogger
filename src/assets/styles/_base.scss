@@ -6,7 +6,7 @@ html {
   &::-webkit-scrollbar {
     width: 0.5rem;
   }
-  &::selection {
+  * ::selection {
     background: var(--main-color, $green);
     color: var(--background-color, $black);
   }

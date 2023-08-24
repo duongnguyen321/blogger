@@ -1,6 +1,7 @@
 .notify {
   transition: opacity, transform;
   position: fixed;
+  user-select: none;
   --transform: translate(calc(100% + 20px));
   &.top-left {
     top: 40px;

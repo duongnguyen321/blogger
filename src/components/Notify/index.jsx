@@ -44,7 +44,7 @@ export default function Notify({
   const classNameNotify = `${notifyTagStyle} ${classNamePosition()}
   ${type === 'success' ? notifySuccessStyle : notifyFailedStyle} ${className}`;
   useEffect(() => {
-    setTimeout(() => notifyRef.current.remove(), +timeout * 1000);
+    setTimeout(() => notifyRef?.current?.remove?.(), +timeout * 1000);
   }, [timeout]);
   return (
     <div
