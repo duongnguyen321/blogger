@@ -16,12 +16,16 @@ export default function Notify({
   position = 'top-left',
   className = '',
 }) {
+  const [pause, setPause] = useState(false);
   const notifyRef = createRef();
+  const timeLineRef = createRef();
   const {
     notify: notifyTagStyle,
     success: notifySuccessStyle,
     failed: notifyFailedStyle,
     message: messageTagStyle,
+    timeline: timelineStyle,
+    line: lineStyle,
     'top-left': positionTopLeftStyle,
     'top-right': positionTopRightStyle,
     'bottom-left': positionBottomLeftStyle,
@@ -44,16 +48,42 @@ export default function Notify({
   const classNameNotify = `${notifyTagStyle} ${classNamePosition()}
   ${type === 'success' ? notifySuccessStyle : notifyFailedStyle} ${className}`;
   useEffect(() => {
-    setTimeout(() => notifyRef?.current?.remove?.(), +timeout * 1000);
-  }, [timeout]);
+    !pause && setTimeout(() => notifyRef?.current?.remove?.(), +timeout * 1000);
+  }, [timeout, pause]);
+
   return (
     <div
       className={classNameNotify}
-      style={{ animationDuration: `${timeout}s` }}
+      style={{
+        animationDuration: `${timeout}s`,
+      }}
+      onMouseOver={() => {
+        notifyRef.current.style.animationPlayState = 'paused';
+        timeLineRef.current.style.animationPlayState = 'paused';
+        setPause(true);
+      }}
+      onMouseOut={() => {
+        notifyRef.current.style.animationPlayState = 'running';
+        timeLineRef.current.style.animationPlayState = 'running';
+        setPause(false);
+      }}
       ref={notifyRef}
     >
       <span className={messageTagStyle}>{message}</span>
       <img src={notifyIcon} alt={message} />
+      <div
+        className={`${timelineStyle} ${
+          type === 'success' ? notifySuccessStyle : notifyFailedStyle
+        }`}
+      >
+        <div
+          className={`${lineStyle}`}
+          style={{
+            animationDuration: `${timeout}s`,
+          }}
+          ref={timeLineRef}
+        />
+      </div>
     </div>
   );
 }

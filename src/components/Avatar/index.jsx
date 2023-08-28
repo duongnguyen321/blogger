@@ -1,5 +1,5 @@
 import React from 'react';
-import { Links } from 'services/helpers';
+import Links from 'services/helpers';
 import avatarStyles from './avatar.module.scss';
 
 /**

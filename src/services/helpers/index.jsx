@@ -10,7 +10,7 @@ import { useLocation, Link, NavLink } from 'react-router-dom';
  * @param {node} children - The link content. Only applicable for regular links.
  * @param {string} className - The link class name. Can be used to apply custom styles or add hover effects.
  */
-export function Links({
+export default function Links({
   to = '/',
   type = 'link',
   title,

@@ -61,4 +61,38 @@
   }
   animation: animateShow 1;
   animation-timing-function: var(--timing-function);
+
+  // timeline style
+  .timeline {
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+    background: var(--background);
+    &.success {
+      --backgroundLine: var(--second-color);
+    }
+    &.failed {
+      --backgroundLine: var(--main-color);
+    }
+    @keyframes animateTime {
+      from {
+        width: 100%;
+      }
+      to {
+        width: 0%;
+      }
+    }
+    .line {
+      position: absolute;
+      background: var(--backgroundLine);
+      height: 100%;
+      top: 0;
+      left: 0;
+      animation: animateTime 1;
+      animation-timing-function: var(--timing-function);
+    }
+  }
 }

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Links } from 'services/helpers';
+import Links from 'services/helpers';
 import tagStyles from './tagStyles.module.scss';
 
 /**
@@ -14,7 +14,7 @@ export default function Tag({ to = '#', text, className = '' }) {
 
   return (
     <Links to={to} className={`${tagTagStyle} ${className}`}>
-      {text}
+      {text.toLowerCase().trim()}
     </Links>
   );
 }

@@ -4,14 +4,20 @@ import Notify from 'components/Notify';
 import Section from 'components/Section';
 import Tag from 'components/Tag';
 import React from 'react';
-import { Links } from 'services/helpers';
+import { useNavigate } from 'react-router-dom';
 
 export default function Home() {
+  const navigate = useNavigate();
   return (
     <Section>
       <Avatar name="Nguyen Minh Nhat Duong" />
       <h1>Home</h1>
-      <Button title="Home" />
+      <Button
+        title="About"
+        onClick={() => {
+          navigate('/about');
+        }}
+      />
       <Notify message="Hello World!" type="success" />
       <Notify
         message="Hello World!"
@@ -19,7 +25,6 @@ export default function Home() {
         timeout="4"
         position="bottom-right"
       />
-      <Links to="/about">About</Links>
       <Tag to="/about" text="about" />
     </Section>
   );

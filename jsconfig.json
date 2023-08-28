@@ -3,9 +3,7 @@
     "baseUrl": "src",
     "target": "es6",
     "module": "commonjs",
-    "paths": {
-      "services/*": ["./src/services/*"]
-    }
+    "paths": {}
   },
   "include": ["src"]
 }

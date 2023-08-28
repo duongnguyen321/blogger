@@ -2,7 +2,8 @@ import React from 'react';
 import footerStyles from './footerStyles.module.scss';
 
 /**
- * Define the Footer component
+ * @param {string} className - The class name for the footer tag.
+ * @param {React.ReactNode} children - The children of the footer.
  */
 export default function Footer({ className = '', children }) {
   const { footer: footerTagStyle } = footerStyles;
