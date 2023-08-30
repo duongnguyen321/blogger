@@ -12,11 +12,20 @@ export default function Home() {
     <Section>
       <Avatar name="Nguyen Minh Nhat Duong" />
       <h1>Home</h1>
+      <Button title="Disabled" disabled />
       <Button
         title="About"
         onClick={() => {
           navigate('/about');
         }}
+      />
+      <Button title="Disabled" disabled type="secondary" />
+      <Button
+        title="About"
+        onClick={() => {
+          navigate('/about');
+        }}
+        type="secondary"
       />
       <Notify message="Hello World!" type="success" />
       <Notify

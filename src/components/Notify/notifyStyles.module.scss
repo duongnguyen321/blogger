@@ -87,12 +87,16 @@
     }
     .line {
       position: absolute;
-      background: var(--backgroundLine);
+      background: linear-gradient(
+        to right,
+        var(--background),
+        var(--backgroundLine) 90%
+      );
       height: 100%;
       top: 0;
       left: 0;
       animation: animateTime 1;
-      animation-timing-function: var(--timing-function);
+      animation-timing-function: linear;
     }
   }
 }

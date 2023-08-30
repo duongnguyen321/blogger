@@ -26,6 +26,7 @@ export default function Notify({
     message: messageTagStyle,
     timeline: timelineStyle,
     line: lineStyle,
+    'notify-icon': notifyIconStyle,
     'top-left': positionTopLeftStyle,
     'top-right': positionTopRightStyle,
     'bottom-left': positionBottomLeftStyle,
@@ -46,7 +47,7 @@ export default function Notify({
     }
   };
   const classNameNotify = `${notifyTagStyle} ${classNamePosition()}
-  ${type === 'success' ? notifySuccessStyle : notifyFailedStyle} ${className}`;
+   ${type === 'success' ? notifySuccessStyle : notifyFailedStyle} ${className}`;
   useEffect(() => {
     !pause && setTimeout(() => notifyRef?.current?.remove?.(), +timeout * 1000);
   }, [timeout, pause]);
@@ -70,7 +71,7 @@ export default function Notify({
       ref={notifyRef}
     >
       <span className={messageTagStyle}>{message}</span>
-      <img src={notifyIcon} alt={message} />
+      <img src={notifyIcon} alt={message} className={notifyIconStyle} />
       <div
         className={`${timelineStyle} ${
           type === 'success' ? notifySuccessStyle : notifyFailedStyle
@@ -79,7 +80,8 @@ export default function Notify({
         <div
           className={`${lineStyle}`}
           style={{
-            animationDuration: `${timeout}s`,
+            // 1.2 because the timing function of classNameNotify is custom cubic
+            animationDuration: `${timeout / 1.2}s`,
           }}
           ref={timeLineRef}
         />
