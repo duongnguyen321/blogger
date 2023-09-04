@@ -14,14 +14,14 @@ export default function Home() {
       <h1>Home</h1>
       <Button title="Disabled" disabled />
       <Button
-        title="About"
+        title="About page"
         onClick={() => {
           navigate('/about');
         }}
       />
       <Button title="Disabled" disabled type="secondary" />
       <Button
-        title="About"
+        title="About page"
         onClick={() => {
           navigate('/about');
         }}
