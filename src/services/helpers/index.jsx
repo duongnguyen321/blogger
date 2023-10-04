@@ -1,4 +1,4 @@
-import React from 'react';
+import propTypes from "prop-types"
 import { useLocation, Link, NavLink } from 'react-router-dom';
 
 /**
@@ -10,6 +10,20 @@ import { useLocation, Link, NavLink } from 'react-router-dom';
  * @param {node} children - The link content. Only applicable for regular links.
  * @param {string} className - The link class name. Can be used to apply custom styles or add hover effects.
  */
+
+Links.propTypes = {
+  to: propTypes.oneOfType([
+    propTypes.string,
+    propTypes.shape({
+      pathname: propTypes.string,
+      search: propTypes.string
+    })
+  ]),
+  type: propTypes.oneOf(['nav', 'link']),
+  title: propTypes.string,
+  children: propTypes.node,
+  className: propTypes.string
+}
 export default function Links({
   to = '/',
   type = 'link',
@@ -45,14 +59,3 @@ export default function Links({
     </>
   );
 }
-
-/**
- * A constant that determines whether the current page is being served from localhost.
- */
-export const isLocalhost = Boolean(
-  window.location.hostname === 'localhost' ||
-    window.location.hostname === '[::1]' ||
-    window.location.hostname.match(
-      /^127(?:\.(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)){3}$/,
-    ),
-);

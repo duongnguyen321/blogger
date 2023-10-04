@@ -1,5 +1,6 @@
-import React, { createContext, useState } from 'react';
-export const { Provider, Consumer } = createContext({});
+import { useState } from 'react';
+import propTypes from "prop-types"
+import { Provider } from './Provider';
 
 /**
  * Create a StateProvider component
@@ -7,6 +8,10 @@ export const { Provider, Consumer } = createContext({});
  * @param {React.ReactNode} children - The children of the StateProvider
  * @returns {JSX.Element}
  */
+
+StateProvider.propTypes = {
+  children: propTypes.node
+}
 export default function StateProvider({ children }) {
   const [state, setState] = useState({});
 

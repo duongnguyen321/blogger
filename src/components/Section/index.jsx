@@ -1,10 +1,14 @@
-import React from 'react';
+import propTypes from "prop-types"
 import sectionStyles from './sectionStyles.module.scss';
 
 /**
  * @param {string} className - The class name for the section tag.
  * @param {React.ReactNode} children - The children of the section.
  */
+Section.propTypes = {
+    className: propTypes.string,
+    children: propTypes.node
+}
 export default function Section({ className = '', children }) {
   const { section: sectionTagStyle } = sectionStyles;
   return (

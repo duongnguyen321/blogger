@@ -1,4 +1,5 @@
-import React, { cloneElement } from 'react';
+import propTypes from "prop-types"
+import { cloneElement } from 'react';
 import mainStyles from './mainStyles.module.scss';
 
 /**
@@ -7,6 +8,12 @@ import mainStyles from './mainStyles.module.scss';
  * @param {ReactElement} children The children of mainTag
  * @param {store} store The context store state, action
  */
+
+Main.propTypes = {
+  className: propTypes.string,
+  children: propTypes.node,
+  store: propTypes.object
+}
 export default function Main({ className = '', children, store }) {
   const { main: mainTagStyle } = mainStyles;
   return (

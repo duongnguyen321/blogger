@@ -1,10 +1,15 @@
-import React from 'react';
+import propTypes from "prop-types"
 import headerStyles from './headerStyles.module.scss';
 
 /**
  * @param {string} className - The class name for the header tag.
  * @param {React.ReactNode} children - The children of the header.
  */
+
+Header.propTypes = {
+  className: propTypes.string,
+  children: propTypes.node
+}
 export default function Header({ className = '', children }) {
   const { header: headerTagStyle } = headerStyles;
   return (

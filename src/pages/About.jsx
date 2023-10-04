@@ -1,9 +1,8 @@
-import Avatar from 'components/Avatar';
-import Button from 'components/Button';
-import Notify from 'components/Notify';
-import Section from 'components/Section';
-import Tag from 'components/Tag';
-import React from 'react';
+import Tag from '@/components/Tag';
+import Avatar from '@/components/Avatar';
+import Button from '@/components/Button';
+import Notify from '@/components/Notify';
+import Section from '@/components/Section';
 import { useNavigate } from 'react-router-dom';
 
 export default function About() {
@@ -14,14 +13,14 @@ export default function About() {
       <h1>About</h1>
       <Button title="Disabled" disabled />
       <Button
-        title="Home page"
+        title="Home"
         onClick={() => {
           navigate('/');
         }}
       />
       <Button title="Disabled" disabled type="secondary" />
       <Button
-        title="Home page"
+        title="Home"
         onClick={() => {
           navigate('/');
         }}

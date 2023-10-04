@@ -1,5 +1,5 @@
-import React from 'react';
-import Links from 'services/helpers';
+import propTypes from "prop-types"
+import Links from '@/services/helpers';
 import tagStyles from './tagStyles.module.scss';
 
 /**
@@ -9,6 +9,18 @@ import tagStyles from './tagStyles.module.scss';
  * @param {string} [props.text] - The tag text.
  * @param {string} [props.className] - The tag class name. Can be used to apply custom styles.
  */
+
+Tag.propTypes = {
+  to: propTypes.oneOfType([
+    propTypes.string,
+    propTypes.shape({
+      pathname: propTypes.string,
+      search: propTypes.string
+    })
+  ]),
+  text: propTypes.string,
+  className: propTypes.string
+}
 export default function Tag({ to = '#', text, className = '' }) {
   const { tag: tagTagStyle } = tagStyles;
 

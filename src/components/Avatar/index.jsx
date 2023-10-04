@@ -1,11 +1,14 @@
-import React from 'react';
-import Links from 'services/helpers';
+import propTypes from "prop-types"
+import Links from '@/services/helpers';
 import avatarStyles from './avatar.module.scss';
 
 /**
  * Define the Avatar component
  * @param {String} name - The name of the user
  */
+Avatar.propTypes = {
+  name: propTypes.string.isRequired
+}
 export default function Avatar({ name }) {
   const {
     wrap: wrapTagStyle,

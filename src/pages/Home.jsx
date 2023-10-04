@@ -1,9 +1,8 @@
-import Avatar from 'components/Avatar';
-import Button from 'components/Button';
-import Notify from 'components/Notify';
-import Section from 'components/Section';
-import Tag from 'components/Tag';
-import React from 'react';
+import Tag from '@/components/Tag';
+import Avatar from '@/components/Avatar';
+import Button from '@/components/Button';
+import Notify from '@/components/Notify';
+import Section from '@/components/Section';
 import { useNavigate } from 'react-router-dom';
 
 export default function Home() {
@@ -14,14 +13,14 @@ export default function Home() {
       <h1>Home</h1>
       <Button title="Disabled" disabled />
       <Button
-        title="About page"
+        title="About"
         onClick={() => {
           navigate('/about');
         }}
       />
       <Button title="Disabled" disabled type="secondary" />
       <Button
-        title="About page"
+        title="About"
         onClick={() => {
           navigate('/about');
         }}

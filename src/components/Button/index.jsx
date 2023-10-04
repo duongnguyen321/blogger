@@ -1,4 +1,4 @@
-import React from 'react';
+import propTypes from "prop-types"
 import buttonStyles from './buttonStyles.module.scss';
 
 /**
@@ -10,6 +10,15 @@ import buttonStyles from './buttonStyles.module.scss';
  * @param {function} onClick - The button click event handler.
  * @param {boolean} disabled - Whether the button is disabled or not.
  */
+
+Button.propTypes = {
+  type: propTypes.oneOf(['primary','secondary']),
+  className: propTypes.string,
+  title: propTypes.string,
+  children: propTypes.node,
+  onClick: propTypes.func,
+  disabled: propTypes.bool
+}
 export default function Button({
   type = 'primary',
   className = '',

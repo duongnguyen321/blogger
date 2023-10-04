@@ -1,5 +1,6 @@
-import React, { createRef, useEffect, useState } from 'react';
-import notifyIcon from 'assets/images/notify.svg';
+import { createRef, useEffect, useState } from 'react';
+import propTypes from "prop-types"
+import notifyIcon from '@/assets/images/notify.svg';
 import notifyStyles from './notifyStyles.module.scss';
 /**
  * Define the Notify component
@@ -9,6 +10,13 @@ import notifyStyles from './notifyStyles.module.scss';
  * @param {string} [position='top-left'] - The notify position. Defaults to 'top-left'.
  * @param {string} [className] - The notify class name. Can be used to apply custom styles.
  */
+Notify.propTypes = {
+  message: propTypes.string,
+  type: propTypes.oneOf(['success', 'failed']),
+  timeout: propTypes.number,
+  position: propTypes.oneOf(['top-left', 'top-right', 'bottom-left', 'bottom-right']),
+  className: propTypes.string
+}
 export default function Notify({
   message = '',
   type = 'success',
@@ -50,7 +58,7 @@ export default function Notify({
    ${type === 'success' ? notifySuccessStyle : notifyFailedStyle} ${className}`;
   useEffect(() => {
     !pause && setTimeout(() => notifyRef?.current?.remove?.(), +timeout * 1000);
-  }, [timeout, pause]);
+  }, [timeout, pause, notifyRef]);
 
   return (
     <div
@@ -70,7 +78,10 @@ export default function Notify({
       }}
       ref={notifyRef}
     >
-      <span className={messageTagStyle}>{message}</span>
+      <span className={messageTagStyle}>
+        {message}
+        {message.slice(-1) !== '!' ? '!' : ''}
+      </span>
       <img src={notifyIcon} alt={message} className={notifyIconStyle} />
       <div
         className={`${timelineStyle} ${
